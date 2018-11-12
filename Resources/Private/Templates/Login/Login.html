@@ -1,0 +1,20 @@
+<f:render section="{status}" arguments="{_all}"/>
+
+
+<!-- Neuer Nutzer wurde angelegt -->
+<f:section name="success">
+    <h1>Du bist wohl neu hier, herzlich Willkommen</h1>
+
+    <p>Da wir keinen Benutzeraccount finden konnten, haben wir Dir nun einen erstellt. Viel Spaß :)</p>
+
+    <a href="{settings.login_redirect}" class="btn btn-primary">Weiter gehts</a>
+</f:section>
+
+
+
+<!-- Fehler beim Anlegen eines neuen Nutzers, falsche Daten? Irgendwas halt... -->
+<f:section name="error">
+    <h1>Ups, Fehler</h1>
+
+    <p>Sorry, leider hat der Facebook Login nicht geklappt, aber der Administrator weiß bestimmt bereits Bescheid.</p>
+</f:section>
