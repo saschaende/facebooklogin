@@ -27,6 +27,8 @@ Existiert der Nutzer nicht, wird automatisch ein FrontendUser Account mit defini
 * Einstellungen vornehmen (es muss ALLES korrekt ausgefüllt werden)
 * Button einbauen und auf Facebook Login Seite verlinken (siehe unten)
 
+![plugin](Documentation/plugin.PNG "Plugin Einstellungen")
+
 # Auf Anmeldeseite Button einbauen
 
 Hier ein Beispiel
