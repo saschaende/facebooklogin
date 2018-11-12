@@ -2,6 +2,7 @@
 
 Login mit Facebook, schnelle Einrichtung, einfacher gehts kaum :)
 
+* **TER**: https://extensions.typo3.org/extension/facebooklogin/
 * **CMS**: TYPO3 8
 * **Type**: plugin
 
