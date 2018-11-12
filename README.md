@@ -8,6 +8,7 @@ Login mit Facebook, schnelle Einrichtung, einfacher gehts kaum :)
 
 # Changelog
 
+* **12.11.2018** - [1.0.1]  Icon was missing
 * **12.11.2018** - [1.0.0]  First release
 
 # Funktionsweise

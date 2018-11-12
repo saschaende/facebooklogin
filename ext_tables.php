@@ -10,7 +10,7 @@ call_user_func(
         $iconRegistry->registerIcon(
             'facebooklogin',
             \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
-            ['source' => 'EXT:facebooklogin/Resources/Public/Icons/extension.png']
+            ['source' => 'EXT:facebooklogin/Resources/Public/Icons/Extension.png']
         );
 
         // --------------------------------------------------------------------------------------
