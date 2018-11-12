@@ -35,7 +35,7 @@ Existiert der Nutzer nicht, wird automatisch ein FrontendUser Account mit defini
 
 ### Verlinkung auf Seite (B) 
 
-![login](Documentation/login.PNG "Plugin Einstellungen")
+![login](Documentation/login.PNG "Login Button, der auf Facebook Login Seite verlinkt")
 
 ## Auf Anmeldeseite Button einbauen
 
