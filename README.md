@@ -40,7 +40,7 @@ Existiert der Nutzer nicht, wird automatisch ein FrontendUser Account mit defini
 
 ## Wichtige Anmerkungen zur Einrichtung der Facebook App
 
-Es ist wichtig, die Domain und Redirect URI richtig anzugeben, damit der Login funktioniert. Das ganze startet man am besten, indem man als Funktion bei Facbeook "Facebook Login" auswählt.
+Es ist wichtig, die Domain und Redirect URI der Seite (A) richtig anzugeben (bei mehrsprachigen Seiten z.B. die englische UND die deutsche URI), damit der Login funktioniert. Das ganze startet man am besten, indem man als Funktion bei Facbeook "Facebook Login" auswählt.
 
 ![fb1](Documentation/fb1.PNG "FB Einrichtung")
 
