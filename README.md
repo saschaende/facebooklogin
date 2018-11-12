@@ -16,7 +16,7 @@ Login mit Facebook, schnelle Einrichtung, einfacher gehts kaum :)
 ## Funktionsweise
 
 Nutzer werden eingeloggt, insofern es eine E-Mail Adresse gibt die mit dem Facebook Account übereinstimmt.
-Existiert der Nutzer nicht, wird automatisch ein FrontendUser Account mit definierbaren Rollen und einem Zufallspasswort angelegt.
+Existiert der Nutzer nicht, wird automatisch ein FrontendUser Account mit definierbaren Rollen und einem Zufallspasswort angelegt, als Benutzername wird die E-Mail Adresse von Facebook verwendet.
 
 ## Installation
 
