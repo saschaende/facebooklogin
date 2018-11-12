@@ -2,7 +2,7 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Facebook Login',
-    'description' => 'Login mit Facebook, schnelle Einrichtung, einfacher gehts kaum :)',
+    'description' => 'Login mit Facebook, schnelle Einrichtung, einfacher gehts kaum. Noch nicht existierende Nutzer erhalten automatisch einen neuen Account :)',
     'category' => 'plugin',
     'author' => 'Sascha Ende',
     'author_email' => 'sascha@sascha-ende.de',
