@@ -8,6 +8,7 @@ Login mit Facebook, schnelle Einrichtung, einfacher gehts kaum :)
 
 ## Changelog
 
+* **12.11.2018** - [1.1.0]  Added multiple signal slots (see documentation)
 * **12.11.2018** - [1.0.1]  Icon was missing
 * **12.11.2018** - [1.0.0]  First release
 
@@ -62,3 +63,13 @@ oder mit Fluid:
 ## Demo
 
 Hier: https://filmmusic.io/anmelden/
+
+## Verfügbare Signal Slots
+
+| Klasse                                              | Signal                    | Parameter               |
+|-----------------------------------------------------|---------------------------|-------------------------|
+| SaschaEnde\Facebooklogin\Controller\LoginController | beforeRedirectToFacebook  | $fb, $this              |
+| SaschaEnde\Facebooklogin\Controller\LoginController | afterRedirectFromFacebook | $fb, $userdata, $this   |
+| SaschaEnde\Facebooklogin\Controller\LoginController | userLogin                 | $user, $this            |
+| SaschaEnde\Facebooklogin\Controller\LoginController | error                     | $userdata, $this        |
+| SaschaEnde\Facebooklogin\Controller\LoginController | newUserAdded              | $user, $password, $this |

@@ -10,7 +10,6 @@ use TYPO3\CMS\Extbase\Domain\Repository\FrontendUserRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Persistence\Generic\QueryResult;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 class LoginController extends ActionController
 {
@@ -44,6 +43,8 @@ class LoginController extends ActionController
 
 
         if (!isset($_GET['code'])) {
+            // Slot
+            $this->signalSlotDispatcher->dispatch(__CLASS__, 'beforeRedirectToFacebook', [$fb, $this]);
             // Redirect to Facebook for authentication
             $this->redirectToUri($fb->getAuthUri());
         } else {
@@ -53,11 +54,14 @@ class LoginController extends ActionController
             // get userdata from facebook
             $userdata = $fb->getUserdata();
 
+            // Slot
+            $this->signalSlotDispatcher->dispatch(__CLASS__, 'afterRedirectFromFacebook', [$fb, $userdata, $this]);
+
             /** @var QueryResult $userfromdb */
             $userfromdb = $this->frontendUserRepository->findByEmail($userdata->email);
 
             // --------------------------------------------------------------------------------
-            // Nutzer wurde gefudnen
+            // Nutzer wurde gefunden
             // --------------------------------------------------------------------------------
 
             if ($userfromdb->count() >= 1) {
@@ -67,6 +71,9 @@ class LoginController extends ActionController
                 // Einloggen, da der Nutzer gefunden wurde
                 t3h::FrontendUser()->loginUser($user->getUsername());
 
+                // Slot
+                $this->signalSlotDispatcher->dispatch(__CLASS__, 'userLogin', [$user, $this]);
+
                 // Weiterleitung
                 $this->redirectToUri($this->settings['login_redirect']);
             }
@@ -75,6 +82,8 @@ class LoginController extends ActionController
             // Keine Daten
             // --------------------------------------------------------------------------------
             elseif (!isset($userdata->email) || empty($userdata->email)) {
+                // Slot
+                $this->signalSlotDispatcher->dispatch(__CLASS__, 'error', [$userdata, $this]);
                 // Keine E-Mail Adresse vorhanden? Fehler...
                 $this->view->assign('status', 'error');
                 // Und hier wird das Template mit der Fehlermeldung angezeigt
@@ -113,6 +122,9 @@ class LoginController extends ActionController
                 // Speichern
                 $this->frontendUserRepository->add($user);
                 t3h::Database()->persistAll();
+
+                // Slot
+                $this->signalSlotDispatcher->dispatch(__CLASS__, 'newUserAdded', [$user, $password, $this]);
 
                 // Einloggen
                 $this->view->assign('status', 'success');
